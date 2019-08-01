@@ -72,15 +72,15 @@ In summary, create the boot sd-card as usual, then copy the OS files to the USB 
 
 1. Plus in your USB 3 drive, then list your drives. If you only plugged in one USB drive then it's highly likely your drive with be /dev/sda.
 
-    ```bash
-    sudo fdisk -l
-    ```
+```bash
+sudo fdisk -l
+```
 
 2. Delete existing partitions and create a new primary partition on the USB drive.
 
-    ```bash
-    sudo fdisk /dev/sda
-    ```
+```bash
+sudo fdisk /dev/sda
+```
 
     **fdisk commands**
 
@@ -91,24 +91,24 @@ In summary, create the boot sd-card as usual, then copy the OS files to the USB 
 
 3. Format the newly created partition
 
-    ```bash
-    sudo mkfs.ext4 /dev/sda1
-    ```
+```bash
+sudo mkfs.ext4 /dev/sda1
+```
 
 4. Create a mount point, mount the USB 3 drive, copy the Operating System files to the USB drive, and amend the cmdline.txt to enable booting from the USB 3 drive
 
-    ```bash
-    sudo mkdir /media/usbdrive && \
-    sudo mount /dev/sda1 /media/usbdrive && \
-    sudo rsync -avx / /media/usbdrive && \
-    sudo sed -i '$s/$/ root=\/dev\/sda1 rootfstype=ext4 rootwait/' /boot/cmdline.txt
-    ```
+```bash
+sudo mkdir /media/usbdrive && \
+sudo mount /dev/sda1 /media/usbdrive && \
+sudo rsync -avx / /media/usbdrive && \
+sudo sed -i '$s/$/ root=\/dev\/sda1 rootfstype=ext4 rootwait/' /boot/cmdline.txt
+```
 
 5. Reboot the Raspberry Pi
 
-    ```bash
-    sudo reboot
-    ```
+```bash
+sudo reboot
+```
 
 ## Installing Docker on Raspbian Buster
 
@@ -187,35 +187,35 @@ The following creates a new SSH key, copies the public key to the Raspberry Pi. 
 
     From **PowerShell as Administrator**.
 
-    ```bash
-    Add-WindowsCapability -Online -Name OpenSSH.Client
-    ```
+```bash
+Add-WindowsCapability -Online -Name OpenSSH.Client
+```
 
 2. From PowerShell, create a key pair.
 
-    ```bash
-    ssh-keygen -t rsa
-    ```
+```bash
+ssh-keygen -t rsa
+```
 
 3. From PowerShell, copy the public key to your Raspberry Pi
 
-    ```bash
-    cat ~/.ssh/id_rsa.pub | ssh pi@raspberrypi.local "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
-    ```
+```bash
+cat ~/.ssh/id_rsa.pub | ssh pi@raspberrypi.local "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
+```
 
 ### From Linux, macOS, and the Windows Subsystem for Linux
 
 1. Create your key. Typically a one time operation.
 
-    ```bash
-    ssh-keygen -t rsa
-    ```
+```bash
+ssh-keygen -t rsa
+```
 
 2. Copy the public key to your Raspberry Pi. From Linux and macOS.
 
-    ```bash
-    ssh-copy-id pi@raspberrypi.local
-    ```
+```bash
+ssh-copy-id pi@raspberrypi.local
+```
 
 ## Tools
 
