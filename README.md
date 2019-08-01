@@ -70,7 +70,7 @@ You can't directly boot from USB 3 (yet), but you can boot from sd-card and then
 
 In summary, create the boot sd-card as usual, then copy the OS files to the USB 3 drive, tweak the /boot/cmdline.txt to load the Operating System from the USB 3 drive. For step by step instructions follow the notes at [How to Run Raspberry Pi 4 or 3 Off an SSD or Flash Drive](https://www.tomshardware.co.uk/boot-raspberry-pi-from-usb,news-61081.html)
 
-1. Plus in your USB 3 drive, then list your drives. If you only plugged in one USB drive then it's highly likely your drive with be /dev/sda.
+1. Plug in your USB 3 drive, then list your drives. If you only plugged in one USB drive then it's highly likely your drive with be /dev/sda.
 
 ```bash
 sudo fdisk -l
