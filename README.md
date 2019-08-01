@@ -1,4 +1,4 @@
-# Get started with Azure IoT Edge on Raspberry Pi Buster plus tips for Raspberry Pi 4
+# Azure IoT Edge on Raspberry Pi Buster plus tips for Raspberry Pi 4
 
 ![Raspberry Pi 4 with Fan SHIM](resources/rpi4.jpg)
 
