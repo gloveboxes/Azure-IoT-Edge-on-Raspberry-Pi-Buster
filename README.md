@@ -4,14 +4,14 @@
 
 ## Useful References
 
-1. [Azure IoT Edge](https://azure.microsoft.com/en-au/services/iot-edge)
-2. [Azure Custom Vision](https://azure.microsoft.com/en-au/services/cognitive-services/custom-vision-service)
+1. [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge?WT.mc_id=iot-0000-dglover)
+2. [Azure Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service?WT.mc_id=iot-0000-dglover)
 
 ## Raspberry Pi 4
 
 If you are anything like me, then you too couldn't resist the Raspberry Pi 4 4GB goodness. I wanted to improve the inference performance of my favourite Machine Learning project - [Creating an image recognition solution with Azure IoT Edge and Azure Cognitive Services](https://dev.to/azure/creating-an-image-recognition-solution-with-azure-iot-edge-and-azure-cognitive-services-4n5i).
 
-As a rough guide, the inference performance of my [Azure Custom Vision](https://azure.microsoft.com/en-au/services/cognitive-services/custom-vision-service/) model was as follows:
+As a rough guide, the inference performance of my [Azure Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/?WT.mc_id=iot-0000-dglover) model was as follows:
 
 1. Raspberry Pi 4 4GB - 720 Milliseconds
 2. Raspberry Pi 3B Plus - 1.2 Seconds
@@ -19,7 +19,7 @@ As a rough guide, the inference performance of my [Azure Custom Vision](https://
 
 ## Raspbian Buster
 
-With the release of the [Raspberry Pi 4](https://www.raspberrypi.org/) the Raspberry Pi Foundation has moved from Raspbian Stretch to Buster (Debian 10) as the default Linux distribution for all Raspberry Pis. For now, at least, it's busted a few things. So here are some tips and tricks for running [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) on a Raspberry Pi running Raspbian Buster.
+With the release of the [Raspberry Pi 4](https://www.raspberrypi.org/) the Raspberry Pi Foundation has moved from Raspbian Stretch to Buster (Debian 10) as the default Linux distribution for all Raspberry Pis. For now, at least, it's busted a few things. So here are some tips and tricks for running [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux?WT.mc_id=iot-0000-dglover) on a Raspberry Pi running Raspbian Buster.
 
 ## Installing Raspbian Buster
 
@@ -142,7 +142,7 @@ sudo reboot
 
 ![](resources/iotedge.png)
 
-Review how to [Install the Azure IoT Edge runtime on Debian-based Linux systems](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux).
+Review how to [Install the Azure IoT Edge runtime on Debian-based Linux systems](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux?WT.mc_id=iot-0000-dglover).
 
 ### SSL Library libssl1.0.2
 
@@ -153,9 +153,9 @@ sudo apt-get install libssl1.0.2
 ```
 
 ```bash
-curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list && \
+curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list?WT.mc_id=iot-0000-dglover > ./microsoft-prod.list && \
 sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/ && \
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+curl https://packages.microsoft.com/keys/microsoft.asc?WT.mc_id=iot-0000-dglover | gpg --dearmor > microsoft.gpg
 sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/ && \
 sudo apt-get update && \
 sudo apt-get -y install iotedge
